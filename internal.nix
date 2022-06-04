@@ -46,7 +46,7 @@ rec {
   # Description: Converts a npm package name to something that is compatible with nix
   # Type: String -> String
   makeValidDrvName = str:
-    lib.stringAsChars (c: if isValidDrvNameChar c then c else "?") str;
+    lib.stringAsChars (c: if isValidDrvNameChar c then c else "_") str;
 
   # Description: Checks if a string looks like a valid git revision
   # Type: String -> Boolean
